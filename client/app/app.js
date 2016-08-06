@@ -7,6 +7,7 @@ angular.module('eventplanner', [
   'eventplanner.user',
   'ngRoute'
 ])
+//routing 
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/signin', {
@@ -74,7 +75,7 @@ angular.module('eventplanner', [
   // then add it to the header so the server can validate the request
   var attach = {
     request: function (object) {
-      var jwt = $window.localStorage.getItem('com.shortly');
+      var jwt = $window.localStorage.getItem('com.eventplanner');
       if (jwt) {
         object.headers['x-access-token'] = jwt;
       }

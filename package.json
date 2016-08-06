@@ -2,21 +2,20 @@
   "name": "eventplannerbymaryam",
   "version": "1.0.0",
   "description": "plan your events with best quality",
-  "main": "Gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "test": "mocha server/spec"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maryamelham91/eventplanner.git"
   },
-  "author": "",
+  "author": "maryamelham\u001b[D\u001b[D\u001b[D\u001b[E\u001b[2~",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/maryamelham91/eventplanner/issues"
   },
   "homepage": "https://github.com/maryamelham91/eventplanner#readme",
- "description": "",
   "devDependencies": {
     "browser-sync": "^1.5.7",
     "chai": "^3.4.1",
@@ -44,5 +43,6 @@
     "morgan": "^1.1.1",
     "q": "^1.4.1",
     "request": "^2.36.0"
-  }
+  },
+  "main": "server.js"
 }
