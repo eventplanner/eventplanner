@@ -20,9 +20,6 @@ var UserSchema = new mongoose.Schema({
   email: {
   	type: String
   },
-  dateOfBirth: {
-  	type: String
-  },
   gender: {
   	type: String
   },
@@ -31,8 +28,9 @@ var UserSchema = new mongoose.Schema({
   },
   salt: String,
 //which event will choose
-  eventsType : [{ type: Schema.Types.ObjectId, ref: 'EventType' }]
-
+  eventsType : {
+  type: String
+  }
 });
 
 // var User=mongoose.model('User', UserSchema);
