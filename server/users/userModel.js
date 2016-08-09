@@ -1,57 +1,23 @@
 var Q = require('q');
 var mongoose = require('mongoose');
-
 var bcrypt = require('bcrypt-nodejs');
 var SALT_WORK_FACTOR = 10;
 var Schema = mongoose.Schema;
 
-
+//user db table 
 var UserSchema = new mongoose.Schema({
-	userName: {
-    type: String,
-    required: true,
-  },
-  password: {
-    type: String
-  },
-  country: {
-  	type: String
-  },
-  email: {
-  	type: String
-  },
-  gender: {
-  	type: String
-  },
-  phoneNumber: {
-  	type: String
-  },
-  salt: String,
-//which event will choose
-  eventsType : {
-  type: String
-  }
+	userName: {type: String},
+  password: {type: String},
+  country: {type: String},
+  email: {type: String},
+  gender: {type: String},
+  phoneNumber: {type: String},
+  //need events type to connect between user and events type
+  //every user have many events
+  eventsType : [{ type: Schema.Types.ObjectId, ref: 'eventsType', unique: true}]
 });
-
-// var User=mongoose.model('User', UserSchema);
-
-
-
-// User.comparePasswords = function (candidatePassword) {
-//   var savedPassword = this.password;
-//   return Q.Promise(function (resolve, reject) {
-//     bcrypt.compare(candidatePassword, savedPassword, function (err, isMatch) {
-//       if (err) {
-//         reject(err);
-//       } else {
-//         resolve(isMatch);
-//       }
-//     });
-//   });
-// };
-
-
 var User = mongoose.model('User' , UserSchema);
+//compare password 
 User.comparePassword = function(candidatePassword, savedPassword, res, cb){
   bcrypt.compare( candidatePassword, savedPassword, function(err, isMatch){
     if(err){
@@ -61,7 +27,7 @@ User.comparePassword = function(candidatePassword, savedPassword, res, cb){
     }
   });
 };
-
+//findOne , findAll is a query function
 
 UserSchema.pre('save', function (next) {
   var user = this;
@@ -91,12 +57,4 @@ UserSchema.pre('save', function (next) {
   });
 });
 
-
-// var newUser=new User({
-//   userName : 'tawfik'
-// });
-
-// newUser.save(function (err,newEntry) {
-//   console.log(newEntry);
-// })
 module.exports = User;

@@ -1,8 +1,14 @@
-.cakes{
- width:300px;
- height:215px;
-       margin-top: 20px;
-
+body {
+ margin: 0;
+ background-image: url("../photos/gold-flowers.jpg");
+ /* background: rgba(0, 0, 0, .5);*/
+ background-color: black;
+ background-size: 1368px 768px;
+ background-repeat:no-repeat;
+ background-attachment: fixed;
+ display: compact;
+ font: 1.5em 'Raleway', sans-serif;
+ color:black;
 }
 input[type=text],input[type=password],input[type=date], input[type=email],input[type=tel], select {
     width: 100%;

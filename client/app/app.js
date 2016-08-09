@@ -3,7 +3,6 @@ angular.module('eventplanner', [
   'eventplanner.eventsType',
   'eventplanner.auth',
   'eventplanner.location',
-  'eventplanner.wedding',
   'eventplanner.user',
   'ngRoute'
 ])
@@ -19,51 +18,51 @@ angular.module('eventplanner', [
       controller: 'AuthController'
     })
     // add routes when needed for pages
-    .when('/eventsType/:id', {
+    .when('/eventsType/:name', {
       templateUrl: 'app/eventsType/eventsType.html',
-      controller: 'EventsTypeCtrl',
+      controller: 'EventsController',
       authenticate: true
     })
-    .when('/location', {
-      templateUrl: 'app/location/location.html',
-      controller: 'LocationCtrl',
-      authenticate: true
-    })
-    .when('/wedding', {
-      templateUrl: 'app/wedding/wedding.html',
-      controller: 'WeddingCtrl',
-      authenticate: true
-    })
-    .when('/wedding/cake', {
-      templateUrl: 'app/wedding/cake/cake.html',
-      controller: 'WeddingCtrl',
-      authenticate: true
-    })
-    .when('/wedding/cars', {
-      templateUrl: 'app/wedding/cars/cars.html',
-      controller: 'WeddingCtrl',
-      authenticate: true
-    })
-    .when('/wedding/flowersDecor', {
-      templateUrl: 'app/wedding/flowersDecor/flowersDecor.html',
-      controller: 'WeddingCtrl',
-      authenticate: true
-    })
-      .when('/wedding/invitationCards', {
-      templateUrl: 'app/wedding/invitationCards/invitationCards.html',
-      controller: 'WeddingCtrl',
-      authenticate: true
-    })
-      .when('/wedding/tables', {
-      templateUrl: 'app/wedding/tables/tables.html',
-      controller: 'WeddingCtrl',
-      authenticate: true
-    })
-    .when('/user/:id', {
-      templateUrl: 'app/user/user.html',
-      controller: 'UserCtrl',
-      authenticate: true
-    })
+    // .when('/location', {
+    //   templateUrl: 'app/location/location.html',
+    //   controller: 'LocationCtrl',
+    //   authenticate: true
+    // })
+    // .when('/wedding', {
+    //   templateUrl: 'app/wedding/wedding.html',
+    //   controller: 'WeddingCtrl',
+    //   authenticate: true
+    // })
+    // .when('/wedding/cake', {
+    //   templateUrl: 'app/wedding/cake/cake.html',
+    //   controller: 'WeddingCtrl',
+    //   authenticate: true
+    // })
+    // .when('/wedding/cars', {
+    //   templateUrl: 'app/wedding/cars/cars.html',
+    //   controller: 'WeddingCtrl',
+    //   authenticate: true
+    // })
+    // .when('/wedding/flowersDecor', {
+    //   templateUrl: 'app/wedding/flowersDecor/flowersDecor.html',
+    //   controller: 'WeddingCtrl',
+    //   authenticate: true
+    // })
+    //   .when('/wedding/invitationCards', {
+    //   templateUrl: 'app/wedding/invitationCards/invitationCards.html',
+    //   controller: 'WeddingCtrl',
+    //   authenticate: true
+    // })
+    //   .when('/wedding/tables', {
+    //   templateUrl: 'app/wedding/tables/tables.html',
+    //   controller: 'WeddingCtrl',
+    //   authenticate: true
+    // })
+    // .when('/user/:id', {
+    //   templateUrl: 'app/user/user.html',
+    //   controller: 'UserCtrl',
+    //   authenticate: true
+    // })
     .otherwise({ redirectTo: '/eventsType' });
     $httpProvider.interceptors.push('AttachTokens');
 })

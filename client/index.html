@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="eventPlanner">
 <head>
   <title>Event Planner</title>
   <meta charset="utf-8">
@@ -23,6 +23,7 @@
   </style>
 </head>
 <body>
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -43,9 +44,10 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Register</a></li>
+        <li><a href="index.html">Register</a></li>
         <li><a href="#">Log In</a></li>
-        <li><a href="#">Catogries</a></li>
+        <li><a href="eventsType/eventsType.html">Catogries</a></li>
+        <li><a href="#">Your Requests</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
  
@@ -55,24 +57,27 @@
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Event planner</h1>
+      <h1>Event planner</h1>
     <p>Plan Your Events With best quality</p>
   </div>
+  <div ng-view></div>
 </div>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>
-<script src="lib/angular/angular.js"></script>
-<script src="lib/angular-route/angular-route.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
 
 <script src="app/auth/auth.js"></script>
-<!-- <script src="app/services/services.js"></script>
-<script src="app/wedding/cake/cake.js"></script>
+<script src="app/services/services.js"></script>
+<!-- <script src="app/wedding/cake/cake.js"></script>
 <script src="app/events/events.js"></script>
 <script src="app/event/event.js"></script>
-<script src="app/user/user.js"></script>
- --><script src="app/app.js"></script>
+ -->
+<!--  <script src="app/user/user.js"></script>
+ -->
+ <script src="app/app.js"></script>
 
 </body>
 </html>

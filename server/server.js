@@ -1,6 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
- var user=require('./users/userModel.js');
+// mongoose.Promise=global.Promise;
+ // var user=require('./users/userModel.js');
 // var user=require('./events/eventModel.js');
 
 var app = express();

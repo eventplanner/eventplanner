@@ -7,7 +7,7 @@ angular.module('eventplanner.auth', [])
         Auth.signin($scope.user)
           .then(function (token) {
             $window.localStorage.setItem('com.eventplanner', token);
-            $location.path('/eventsType');
+            $location.path('/events');
           })
           .catch(function (error) {
             console.error(error);
@@ -18,7 +18,7 @@ angular.module('eventplanner.auth', [])
         Auth.signup($scope.user)
           .then(function (token) {
             $window.localStorage.setItem('com.eventplanner', token);
-            $location.path('/eventsType');
+            $location.path('/events');
           })
           .catch(function (error) {
             console.error(error);

@@ -1,0 +1,86 @@
+
+<head>
+  <title>Event Planner</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <!-- <style >
+    	 .navbar-header{
+        background-image: bb.jpg;
+      }
+    </style> -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+
+<!--       <a class="navbar-brand" href="#">Event </a>
+ -->    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Register</a></li>
+        <li><a href="#">Log In</a></li>
+        <li><a href="#">Catogries</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+ 
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Log In to Event planner</h1>
+    <div class = "container">
+      <div class="wrapper">
+        <div action="index.html"  method="post" name="Login_Form" class="form-signin">       
+            <h3 class="form-signin-heading">Fill The fields with required data</h3>
+            <hr class="colorgraph" ><br>
+            <form name="signinForm" ng-submit='signin()'>
+              <input type="text" ng-model='user.username' class="form-control" placeholder="user name" required="" autofocus="" style="width:150px, height=150px"  />
+              <input type="password" ng-model='user.password' class="form-control" placeholder="Password" required=""/>  
+              <input type="country" ng-model='user.country' class="form-control" placeholder="country" required=""/>  
+              <input type="email" ng-model='user.email' class="form-control" placeholder="email" required=""/>  
+              <input type="gender" ng-model='user.gender' class="form-control" placeholder="gender" required=""/>  
+              <input type="phoneNumber" ng-model='user.phoneNumber' class="form-control" placeholder="phoneNumber" required=""/>  
+              <span  id="errorSpan" style=" color:red ; text-align:center ; display: none; ">error</span>
+            <button class="btn btn-lg btn-primary btn-block"  type="submit"  name="Submit" value="register" ">register</button>        
+          </form>   
+          <br>
+<!--           <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+ -->           
+        </div>     
+      </div>
+</div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>

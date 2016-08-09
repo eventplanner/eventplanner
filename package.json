@@ -4,7 +4,7 @@
   "description": "plan your events with best quality",
   "scripts": {
     "start": "node server/server.js",
-    "test": "mocha server-test"
+    "test": "mocha server-test/*.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   "homepage": "https://github.com/maryamelham91/eventplanner#readme",
   "devDependencies": {
     "browser-sync": "^1.5.7",
-    "chai": "^3.4.1",
+    "chai": "^3.5.0",
+    "chai-things": "^0.2.0",
     "clone-stats": "0.0.1",
     "gulp": "^3.8.5",
     "gulp-nodemon": "^1.0.4",
